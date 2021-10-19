@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Images/icon.png" type="image/x-icon" />
+  </head>
+
+  <body onload="Names()">
+    <!-- ------------------------------Name Input------------------------------ -->
+    <div class="playerNames">
+      <h1 class="mainHeading">
+        <img class="iconImage" src="Images/icon.png" alt="" /> Tic Tac Toe
+      </h1>
+      <div class="namesContainer">
+        <p class="warrning">! Please Enter Names.</p>
+        <div class="names">
+          <label for="firstplayer">Player 1 :</label>
+          <input
+            class="nameInput"
+            oninput="hideWarrning()"
+            name="firstplayer"
+            type="text"
+            placeholder="Name of First Player"
+          />
+        </div>
+        <div class="names">
+          <label for="secondplayer">Player 2 :</label>
+          <input
+            class="nameInput"
+            oninput="hideWarrning()"
+            name="secondplayer"
+            type="text"
+            placeholder="Name of Second Player"
+          />
+        </div>
+        <button class="startBtn btn">Start</button>
+      </div>
+    </div>
+
+    <!-- -----------------------------------Main Game------------------------------------- -->
+    <div class="mainDiv">
+      <h1 class="mainHeading">
+        <img class="iconImage" src="Images/icon.png" alt="" /> Tic Tac Toe
+      </h1>
+      <div class="tictactoeContainer">
+        <div class="item borderLeft_0 borderTop_0"></div>
+        <div class="item borderTop_0"></div>
+        <div class="item borderTop_0 borderRight_0"></div>
+        <div class="item borderLeft_0"></div>
+        <div class="item"></div>
+        <div class="item borderRight_0"></div>
+        <div class="item borderLeft_0 bordeBottom_0"></div>
+        <div class="item bordeBottom_0 bordeBottom_0"></div>
+        <div class="item borderRight_0 bordeBottom_0"></div>
+      </div>
+      <div class="turnText">Best Of Luck!</div>
+    </div>
+    <footer>Made With ❤️ By Shweta</footer>
+    <!-- ----------------------------Greeting After Winning--------------------------- -->
+    <div class="winningDiv">
+      <h1 class="tictacIcon">
+        <img class="iconImage" src="Images/icon.png" alt="" /> Tic Tac Toe
+      </h1>
+      <img class="winImage" src="Images/Dancing.gif" alt="Win image" />
+      <h1 class="winnerName">Name Of Winner</h1>
+      <button class="playagainBtn btn">Play Again</button>
+    </div>
+
+    <script src="logic.js"></script>
+  </body>
+</html>

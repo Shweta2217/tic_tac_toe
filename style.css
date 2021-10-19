@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+.btn {
+  background-color: #f3557c;
+  border-color: #ee1e52;
+  color: white;
+  height: 3rem;
+  border-radius: 10px;
+  height: 3rem;
+  font-size: 1.7rem;
+}
+/*------------------------------------Input Names----------------------------------------*/
+.playerNames {
+  padding-top: 20px;
+  background-color: antiquewhite;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.warrning {
+  font-size: 1.5rem;
+  color: red;
+  visibility: hidden;
+}
+.namesContainer {
+  margin-top: 4%;
+}
+.names {
+  font-size: 2rem;
+  margin: 40px 0;
+}
+.nameInput {
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+.startBtn {
+  width: 7rem;
+}
+/*-------------------------------------Main Game ------------------------------*/
+.mainDiv{
+    padding-top: 20px;
+}
+.iconImage {
+  height: 30px;
+}
+
+.tictactoeContainer {
+  width: 30%;
+  height: 55vh;
+  margin: 3rem auto 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.item {
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+.borderLeft_0 {
+  border-left: none;
+}
+.borderRight_0 {
+  border-right: none;
+}
+.borderTop_0 {
+  border-top: none;
+}
+.bordeBottom_0 {
+  border-bottom: none;
+}
+.turnText{
+    margin-top: 20px;
+    font-size: 2.3rem;
+   
+
+}
+footer{
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+/*-------------------------------- After Winning--------------------------------- */
+
+.winningDiv {
+  background-image: url("Images/bg2.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.winImage {
+  height: 50%;
+  width: 40%;
+}
+.winnerName {
+ 
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+.playagainBtn {
+  margin-top: 2.5rem;
+  width: 12rem;
+}
+
+/* -----------------------------------media Querry--------------------- */
+@media (max-width:550px){
+    .tictactoeContainer {
+        width: 70%;
+        height: 45vh;
+        margin: 4rem auto 5rem auto !important;     
+      }
+      .winImage {
+        height: 40%;
+        width: 60%;
+      }
+      .btn {
+        
+        height: 2.5rem;
+        font-size: 1.4rem;
+      }
+      .warrning {
+        font-size: 1.2rem;
+       
+      }
+      .namesContainer {
+        margin-top: 26%;
+      }
+      .names {
+        font-size: 1.5rem;
+        margin: 20px 0;
+      }
+      .nameInput {
+        height: 1.7rem;
+        font-size: 1.2rem;
+       
+      }
+      .startBtn {
+        margin-top: 2rem;
+        width: 5rem;
+      }
+}
+@media (max-width:1030px){
+    .tictactoeContainer {
+        width: 70%;
+        height: 45vh;
+        margin: 5rem auto 7rem auto;     
+      }
+}
