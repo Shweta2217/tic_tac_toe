@@ -4,6 +4,7 @@ var gameOver = new Audio("Music/GameOver.mp3");
 var turn = "X";
 var GameOver = false;
 var turnText=document.querySelector(".turnText");
+let val=0;
 //-------------------------------Name Input On LOad--------------------------
 
 // Entering Name of Player
@@ -71,9 +72,11 @@ function checkWinner() {
         document.querySelector(".winnerName").innerText =
           inputBox[0].value + " Won";
       gameOver.play();
-      return true;
+      val++;
+      console.log(val);
     }
   });
+ 
 }
 //checking For Tie
 
@@ -112,8 +115,9 @@ for (var i = 0; i < Items.length; i++) {
       turnText.innerText=`${inputBox[0].value}'s  turn`;
       }
       turn = changeTurn();
-      turnAudio.play();
+      turnAudio.play();     
       checkWinner();
+      if(val!=1)
       checkTie();
     }
   });
