@@ -4,7 +4,7 @@ var gameOver = new Audio("Music/GameOver.mp3");
 var turn = "X";
 var GameOver = false;
 var turnText=document.querySelector(".turnText");
-let val=0;
+let val;
 //-------------------------------Name Input On LOad--------------------------
 
 // Entering Name of Player
@@ -47,7 +47,7 @@ function changeTurn() {
 //Checking For the Winner
 var Items = document.querySelectorAll(".item");
 function checkWinner() { 
-  console.log(Items);
+ val = 0;
   var wins = [
     [0, 1, 2],
     [0, 3, 6],
