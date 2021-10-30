@@ -32,12 +32,6 @@ function hideWarrning() {
 
 // -------------------------------MAin Game Logic-------------------------------
 
-// if(turn == "X"){
-//   turnText.innerText= "Turn Of "+inputBox[0].value;
-// }
-// else{
-// turnText.innerText= "Turn Of "+inputBox[1].value;
-// }
 
 //function to change the turn
 function changeTurn() {
@@ -48,9 +42,10 @@ function changeTurn() {
   }
 }
 
+
 //Checking For the Winner
-function checkWinner() {
-  var Items = document.querySelectorAll(".item");
+var Items = document.querySelectorAll(".item");
+function checkWinner() { 
   console.log(Items);
   var wins = [
     [0, 1, 2],
@@ -71,14 +66,37 @@ function checkWinner() {
       document.querySelector(".winningDiv").style.display = "flex";
       if (turn == "X") {
         document.querySelector(".winnerName").innerText =
-          inputBox[1].value + " Wones";
+          inputBox[1].value + " Won";
       } else
         document.querySelector(".winnerName").innerText =
-          inputBox[0].value + " Wones";
+          inputBox[0].value + " Won";
       gameOver.play();
+      return true;
     }
   });
 }
+//checking For Tie
+
+function checkTie(){
+  let count=0;
+for(let i=0; i<Items.length;i++){
+  if (Items[i].innerText!="") {
+    count+=1;
+  }  
+}
+if (count==9) {
+  document.querySelector(".tie").style.display = "flex";  
+  gameOver.play();
+  
+}
+}
+var TiePlayAgain = document.querySelector(".TiePlayAgain");
+TiePlayAgain.addEventListener("click", function () {
+  for (var i = 0; i < Items.length; i++){
+    Items[i].innerText="";
+  }
+  document.querySelector(".tie").style.display = "none";  
+});
 
 //Adding EventListner To All Items[boxes]
 var Items = document.querySelectorAll(".item");
@@ -96,6 +114,7 @@ for (var i = 0; i < Items.length; i++) {
       turn = changeTurn();
       turnAudio.play();
       checkWinner();
+      checkTie();
     }
   });
 }
